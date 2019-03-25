@@ -44,7 +44,13 @@ const NewsList = Vue.component('news-list',{
         <div class="news">
             <h2>News</h2>
             <ul class="news__list">
-                <li v-for="article in articles" class="news__item">{{ article.title }}</li>
+                <li v-for="article in articles" class="news__item col col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <img class="card-img-top" :src="article.urlToImage" />
+                        <p class="card-subtitle">{{ article.description }}</p>
+                    </div>
+                </li>
             </ul>
             <div class="form-inline d-flex justify-content-center">
                 <div class="form-group mx-sm-3 mb-2">
